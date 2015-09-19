@@ -1,0 +1,1 @@
+devenv XMLDocumentModel.sln /rebuild debug

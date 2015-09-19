@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+<!-- XML test case -->
+<LectureNote course="CSE681" note="my note">
+  <title>XML Example #1</title>
+  <reference>
+    <title>Programming Microsoft .Net</title>
+    <author>Jeff Prosise 
+	<TestTag tagName="Tester">
+	 <ChildTestTag tagName="ChildTester">
+	  <GreatChildTestTag tagName="Tester"/>
+	 </ChildTestTag>
+	</TestTag>
+	<note Company='Wintellect'></note></author>
+    <publisher>Microsoft Press</publisher>
+    <date>2002</date>
+    <page>608</page>
+  </reference>
+  <comment>Description of PCDATA</comment>
+</LectureNote>

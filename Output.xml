@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+  <!-- XML test case -->
+    <LectureNote course="CSE681" note="my note">
+      <title name="ojas">
+        XML Example 1
+      </title>
+      <reference>
+        <title>
+          Programming Microsoft
+        </title>
+        <author>
+          Jeff Prosise
+          <note Company="Wintellect">
+          </note>
+        </author>
+        <publisher>
+          Microsoft Press
+        </publisher>
+      </reference>
+      <comment>
+        Description of PCDATA
+      </comment>
+  <!-- My Comment -->
+    <NewChild NewChildName="NewChildValue">
+    </NewChild>
+    NewChildText
+    </LectureNote>
