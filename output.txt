@@ -1,0 +1,976 @@
+======================================================================================================================================================
+Demonstarting Requirement 3 and 10 by parsing and thereby writing an XML File/String to corresponding Tree representation
+======================================================================================================================================================
+Internal Tree Representation :
+============================================================
+
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+  <!-- XML test case -->
+    <LectureNote course="CSE681" note="my note">
+      <title>
+        XML Example 1
+      </title>
+      <reference>
+        <title>
+          Programming Microsoft
+        </title>
+        <author>
+          Jeff Prosise
+          <TestTag tagName="Tester">
+            <ChildTestTag tagName="ChildTester">
+              <GreatChildTestTag tagName="Tester">
+              </GreatChildTestTag>
+            </ChildTestTag>
+          </TestTag>
+          <note Company="Wintellect">
+          </note>
+        </author>
+        <publisher>
+          Microsoft Press
+        </publisher>
+      </reference>
+      <comment>
+        Description of PCDATA
+      </comment>
+    </LectureNote>
+
+
+Please Note: Output has been written in File: Output.xml
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 7 by providing the ability to add a root element to an empty document tree
+======================================================================================================================================================
+Query is:: Add Tagged Element: 'NewRoot'id the root is empty.
+
+
+Cannot Form New Root because Childrens are already Present
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 6 by finding pointers to the a collection of elements that have the tag: title
+======================================================================================================================================================
+XML Portion found with ID/TAG: title
+------------------------------------------------------------
+
+
+    <title>
+      XML Example 1
+    </title>
+
+------------------------------------------------------------
+
+
+    <title>
+      Programming Microsoft
+    </title>
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 6 by finding pointers to the a collection of elements that have the tag: HelloWorld
+======================================================================================================================================================
+
+ID/TAG:HelloWorld is not found in XML
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 5 by finding pointer to the element that have the specified name and value pair
+======================================================================================================================================================
+Query is: Find with name and value pair as: 'tagName = Tester'
+
+XML Portion found with Key-Value Pair: 'tagName : Tester'
+
+
+    <TestTag tagName="Tester">
+      <ChildTestTag tagName="ChildTester">
+        <GreatChildTestTag tagName="Tester">
+        </GreatChildTestTag>
+      </ChildTestTag>
+    </TestTag>
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 5 by finding pointer to the element that have the specified name and value pair
+======================================================================================================================================================
+Query is: Find with name and value pair as: 'InvalidName = InvalidValue'
+
+
+Key-Value Pair:InvalidName : InvalidValue is not found in XML
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 8 provide a facility to return a std::vector containing all the name-value attribute pairs attached to that element
+======================================================================================================================================================
+Input is Pointer to Element: LectureNote
+
+
+Following Name-Value Attribute Pair Found for pointer to the Element: LectureNote
+  course = CSE681
+  note = my note
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 8 provide a facility to return a std::vector of pointers to all the children of a specified element.
+======================================================================================================================================================
+Input is Pointer to Element: LectureNote
+
+
+Following Children Found:
+  title
+  reference
+  comment
+
+XML Portion found with ID/TAG: LectureNote
+------------------------------------------------------------
+
+
+    <title>
+      XML Example 1
+    </title>
+
+------------------------------------------------------------
+
+
+    <reference>
+      <title>
+        Programming Microsoft
+      </title>
+      <author>
+        Jeff Prosise
+        <TestTag tagName="Tester">
+          <ChildTestTag tagName="ChildTester">
+            <GreatChildTestTag tagName="Tester">
+            </GreatChildTestTag>
+          </ChildTestTag>
+        </TestTag>
+        <note Company="Wintellect">
+        </note>
+      </author>
+      <publisher>
+        Microsoft Press
+      </publisher>
+    </reference>
+
+------------------------------------------------------------
+
+
+    <comment>
+      Description of PCDATA
+    </comment>
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 9 by adding name and value pair that supports attributes
+======================================================================================================================================================
+
+Query is: Add Name-Value Pair: 'name = ojas' to Tag: title
+
+
+XML with modification:
+
+<?xml version="1.0" encoding="utf-8"?>
+  <?xml-stylesheet type="text/xsl" href="style.xsl"?>
+  <!-- XML test case -->
+    <LectureNote course="CSE681" note="my note">
+      <title name="ojas">
+        XML Example 1
+      </title>
+      <reference>
+        <title>
+          Programming Microsoft
+        </title>
+        <author>
+          Jeff Prosise
+          <TestTag tagName="Tester">
+            <ChildTestTag tagName="ChildTester">
+              <GreatChildTestTag tagName="Tester">
+              </GreatChildTestTag>
+            </ChildTestTag>
+          </TestTag>
+          <note Company="Wintellect">
+          </note>
+        </author>
+        <publisher>
+          Microsoft Press
+        </publisher>
+      </reference>
+      <comment>
+        Description of PCDATA
+      </comment>
+    </LectureNote>
+
+
+Please Note: Output has been written in File: Output.xml
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 7 by adding Child Element to any Element in the tree that can hold child references found by ID or Tag.
+======================================================================================================================================================
+Query is: Add Comment Element: 'My Comment' to the parent tag: LectureNote
+
+
+XML with modification:
+
+<?xml version="1.0" encoding="utf-8"?>
+  <?xml-stylesheet type="text/xsl" href="style.xsl"?>
+  <!-- XML test case -->
+    <LectureNote course="CSE681" note="my note">
+      <title name="ojas">
+        XML Example 1
+      </title>
+      <reference>
+        <title>
+          Programming Microsoft
+        </title>
+        <author>
+          Jeff Prosise
+          <TestTag tagName="Tester">
+            <ChildTestTag tagName="ChildTester">
+              <GreatChildTestTag tagName="Tester">
+              </GreatChildTestTag>
+            </ChildTestTag>
+          </TestTag>
+          <note Company="Wintellect">
+          </note>
+        </author>
+        <publisher>
+          Microsoft Press
+        </publisher>
+      </reference>
+      <comment>
+        Description of PCDATA
+      </comment>
+  <!-- My Comment -->
+    </LectureNote>
+
+
+Please Note: Output has been written in File: Output.xml
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 7 by adding Child Element to any Element in the tree that can hold child references found by ID or Tag.
+======================================================================================================================================================
+Query is: Add Tagged Element with tag: 'NewChild' and Name,Value Pair:'NewChildName = NewChildValue' to the parent tag: LectureNote.
+
+
+XML with modification:
+
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+  <!-- XML test case -->
+    <LectureNote course="CSE681" note="my note">
+      <title name="ojas">
+        XML Example 1
+      </title>
+      <reference>
+        <title>
+          Programming Microsoft
+        </title>
+        <author>
+          Jeff Prosise
+          <TestTag tagName="Tester">
+            <ChildTestTag tagName="ChildTester">
+              <GreatChildTestTag tagName="Tester">
+              </GreatChildTestTag>
+            </ChildTestTag>
+          </TestTag>
+          <note Company="Wintellect">
+          </note>
+        </author>
+        <publisher>
+          Microsoft Press
+        </publisher>
+      </reference>
+      <comment>
+        Description of PCDATA
+      </comment>
+  <!-- My Comment -->
+    <NewChild NewChildName="NewChildValue">
+    </NewChild>
+    </LectureNote>
+
+
+Please Note: Output has been written in File: Output.xml
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 7 by adding Child Element to any Element in the tree that can hold child references found by ID or Tag.
+======================================================================================================================================================
+Query is: Add Text Element with Text: 'NewChildText' to the parent tag: LectureNote.
+
+
+XML with modification:
+
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+  <!-- XML test case -->
+    <LectureNote course="CSE681" note="my note">
+      <title name="ojas">
+        XML Example 1
+      </title>
+      <reference>
+        <title>
+          Programming Microsoft
+        </title>
+        <author>
+          Jeff Prosise
+          <TestTag tagName="Tester">
+            <ChildTestTag tagName="ChildTester">
+              <GreatChildTestTag tagName="Tester">
+              </GreatChildTestTag>
+            </ChildTestTag>
+          </TestTag>
+          <note Company="Wintellect">
+          </note>
+        </author>
+        <publisher>
+          Microsoft Press
+        </publisher>
+      </reference>
+      <comment>
+        Description of PCDATA
+      </comment>
+  <!-- My Comment -->
+    <NewChild NewChildName="NewChildValue">
+    </NewChild>
+    NewChildText
+    </LectureNote>
+
+
+Please Note: Output has been written in File: Output.xml
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 9 by removing name and value pair that supports attributes
+======================================================================================================================================================
+Query is: Remove Child Attribute with Name-Value Pair: 'tagName = Tester' from the tag: GreatChildTestTag.
+
+
+XML with modification:
+
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+  <!-- XML test case -->
+    <LectureNote course="CSE681" note="my note">
+      <title name="ojas">
+        XML Example 1
+      </title>
+      <reference>
+        <title>
+          Programming Microsoft
+        </title>
+        <author>
+          Jeff Prosise
+          <TestTag tagName="Tester">
+            <ChildTestTag tagName="ChildTester">
+              <GreatChildTestTag>
+              </GreatChildTestTag>
+            </ChildTestTag>
+          </TestTag>
+          <note Company="Wintellect">
+          </note>
+        </author>
+        <publisher>
+          Microsoft Press
+        </publisher>
+      </reference>
+      <comment>
+        Description of PCDATA
+      </comment>
+  <!-- My Comment -->
+    <NewChild NewChildName="NewChildValue">
+    </NewChild>
+    NewChildText
+    </LectureNote>
+
+
+Please Note: Output has been written in File: Output.xml
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 7 by removing Child Element from any Element in the tree that can hold child references found by ID or Tag.
+======================================================================================================================================================
+Query is: :Remove Child Element with Tag: TestTag from the parent tag: author.
+
+
+XML with modification:
+
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+  <!-- XML test case -->
+    <LectureNote course="CSE681" note="my note">
+      <title name="ojas">
+        XML Example 1
+      </title>
+      <reference>
+        <title>
+          Programming Microsoft
+        </title>
+        <author>
+          Jeff Prosise
+          <note Company="Wintellect">
+          </note>
+        </author>
+        <publisher>
+          Microsoft Press
+        </publisher>
+      </reference>
+      <comment>
+        Description of PCDATA
+      </comment>
+  <!-- My Comment -->
+    <NewChild NewChildName="NewChildValue">
+    </NewChild>
+    NewChildText
+    </LectureNote>
+
+
+Please Note: Output has been written in File: Output.xml
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 7 by providing the ability to add a root element to an empty document tree
+======================================================================================================================================================
+Query is:: Add Tagged Element: 'NewRoot'id the root is empty.
+
+Internal Tree Representation :
+============================================================
+
+
+  <NewRoot>
+  </NewRoot>
+
+
+ Please Note: Output has been written in File: Root.xml
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 4 by moving one XML Document object to another using Move Constructor and Move Assignment Operator.
+======================================================================================================================================================
+Move Constructor Called
+After Move Constructor operation,New object is holding the Internal Representation of Tree :
+
+  <NewRoot>
+  </NewRoot>
+
+Move Assignment Operator Called
+After Move Assignment operation,New object is holding the Internal Representation of Tree :
+  <NewRoot>
+  </NewRoot>
+
+
+ Please Note: Output has been written in File: Root.xml
+
+
+
+
+
+======================================================================================================================================================
+======================================================================================================================================================
+Demonstarting Requirement 10 by reading from XML String
+
+NOW ALL THE OPERATIONS WILL BE REPEATED FOR STRING INPUT
+
+======================================================================================================================================================
+
+======================================================================================================================================================
+
+
+
+
+
+======================================================================================================================================================
+Demonstarting Requirement 3 and 10 by parsing and thereby writing an XML File/String to corresponding Tree representation
+======================================================================================================================================================
+Internal Tree Representation :
+============================================================
+
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+  <!-- XML test case -->
+    <LectureNote course="CSE681" note="my note">
+      <title>
+        XML Example 1
+      </title>
+      <reference>
+        <title>
+          Programming Microsoft
+        </title>
+        <author>
+          Jeff Prosise
+          <TestTag tagName="Tester">
+            <ChildTestTag tagName="ChildTester">
+              <GreatChildTestTag tagName="Tester">
+              </GreatChildTestTag>
+            </ChildTestTag>
+          </TestTag>
+          <note Company="Wintellect">
+          </note>
+        </author>
+        <publisher>
+          Microsoft Press
+        </publisher>
+      </reference>
+      <comment>
+        Description of PCDATA
+      </comment>
+    </LectureNote>
+
+
+Please Note: Output has been written in File: Output.xml
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 7 by providing the ability to add a root element to an empty document tree
+======================================================================================================================================================
+Query is:: Add Tagged Element: 'NewRoot'id the root is empty.
+
+
+Cannot Form New Root because Childrens are already Present
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 6 by finding pointers to the a collection of elements that have the tag: title
+======================================================================================================================================================
+XML Portion found with ID/TAG: title
+------------------------------------------------------------
+
+
+    <title>
+      XML Example 1
+    </title>
+
+------------------------------------------------------------
+
+
+    <title>
+      Programming Microsoft
+    </title>
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 6 by finding pointers to the a collection of elements that have the tag: HelloWorld
+======================================================================================================================================================
+
+ID/TAG:HelloWorld is not found in XML
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 5 by finding pointer to the element that have the specified name and value pair
+======================================================================================================================================================
+Query is: Find with name and value pair as: 'tagName = Tester'
+
+XML Portion found with Key-Value Pair: 'tagName : Tester'
+
+
+    <TestTag tagName="Tester">
+      <ChildTestTag tagName="ChildTester">
+        <GreatChildTestTag tagName="Tester">
+        </GreatChildTestTag>
+      </ChildTestTag>
+    </TestTag>
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 5 by finding pointer to the element that have the specified name and value pair
+======================================================================================================================================================
+Query is: Find with name and value pair as: 'InvalidName = InvalidValue'
+
+
+Key-Value Pair:InvalidName : InvalidValue is not found in XML
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 8 provide a facility to return a std::vector containing all the name-value attribute pairs attached to that element
+======================================================================================================================================================
+Input is Pointer to Element: LectureNote
+
+
+Following Name-Value Attribute Pair Found for pointer to the Element: LectureNote
+  course = CSE681
+  note = my note
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 8 provide a facility to return a std::vector of pointers to all the children of a specified element.
+======================================================================================================================================================
+Input is Pointer to Element: LectureNote
+
+
+Following Children Found:
+  title
+  reference
+  comment
+
+XML Portion found with ID/TAG: LectureNote
+------------------------------------------------------------
+
+
+    <title>
+      XML Example 1
+    </title>
+
+------------------------------------------------------------
+
+
+    <reference>
+      <title>
+        Programming Microsoft
+      </title>
+      <author>
+        Jeff Prosise
+        <TestTag tagName="Tester">
+          <ChildTestTag tagName="ChildTester">
+            <GreatChildTestTag tagName="Tester">
+            </GreatChildTestTag>
+          </ChildTestTag>
+        </TestTag>
+        <note Company="Wintellect">
+        </note>
+      </author>
+      <publisher>
+        Microsoft Press
+      </publisher>
+    </reference>
+
+------------------------------------------------------------
+
+
+    <comment>
+      Description of PCDATA
+    </comment>
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 9 by adding name and value pair that supports attributes
+======================================================================================================================================================
+
+Query is: Add Name-Value Pair: 'name = ojas' to Tag: title
+
+
+XML with modification:
+
+<?xml version="1.0" encoding="utf-8"?>
+  <?xml-stylesheet type="text/xsl" href="style.xsl"?>
+  <!-- XML test case -->
+    <LectureNote course="CSE681" note="my note">
+      <title name="ojas">
+        XML Example 1
+      </title>
+      <reference>
+        <title>
+          Programming Microsoft
+        </title>
+        <author>
+          Jeff Prosise
+          <TestTag tagName="Tester">
+            <ChildTestTag tagName="ChildTester">
+              <GreatChildTestTag tagName="Tester">
+              </GreatChildTestTag>
+            </ChildTestTag>
+          </TestTag>
+          <note Company="Wintellect">
+          </note>
+        </author>
+        <publisher>
+          Microsoft Press
+        </publisher>
+      </reference>
+      <comment>
+        Description of PCDATA
+      </comment>
+    </LectureNote>
+
+
+Please Note: Output has been written in File: Output.xml
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 7 by adding Child Element to any Element in the tree that can hold child references found by ID or Tag.
+======================================================================================================================================================
+Query is: Add Comment Element: 'My Comment' to the parent tag: LectureNote
+
+
+XML with modification:
+
+<?xml version="1.0" encoding="utf-8"?>
+  <?xml-stylesheet type="text/xsl" href="style.xsl"?>
+  <!-- XML test case -->
+    <LectureNote course="CSE681" note="my note">
+      <title name="ojas">
+        XML Example 1
+      </title>
+      <reference>
+        <title>
+          Programming Microsoft
+        </title>
+        <author>
+          Jeff Prosise
+          <TestTag tagName="Tester">
+            <ChildTestTag tagName="ChildTester">
+              <GreatChildTestTag tagName="Tester">
+              </GreatChildTestTag>
+            </ChildTestTag>
+          </TestTag>
+          <note Company="Wintellect">
+          </note>
+        </author>
+        <publisher>
+          Microsoft Press
+        </publisher>
+      </reference>
+      <comment>
+        Description of PCDATA
+      </comment>
+  <!-- My Comment -->
+    </LectureNote>
+
+
+Please Note: Output has been written in File: Output.xml
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 7 by adding Child Element to any Element in the tree that can hold child references found by ID or Tag.
+======================================================================================================================================================
+Query is: Add Tagged Element with tag: 'NewChild' and Name,Value Pair:'NewChildName = NewChildValue' to the parent tag: LectureNote.
+
+
+XML with modification:
+
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+  <!-- XML test case -->
+    <LectureNote course="CSE681" note="my note">
+      <title name="ojas">
+        XML Example 1
+      </title>
+      <reference>
+        <title>
+          Programming Microsoft
+        </title>
+        <author>
+          Jeff Prosise
+          <TestTag tagName="Tester">
+            <ChildTestTag tagName="ChildTester">
+              <GreatChildTestTag tagName="Tester">
+              </GreatChildTestTag>
+            </ChildTestTag>
+          </TestTag>
+          <note Company="Wintellect">
+          </note>
+        </author>
+        <publisher>
+          Microsoft Press
+        </publisher>
+      </reference>
+      <comment>
+        Description of PCDATA
+      </comment>
+  <!-- My Comment -->
+    <NewChild NewChildName="NewChildValue">
+    </NewChild>
+    </LectureNote>
+
+
+Please Note: Output has been written in File: Output.xml
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 7 by adding Child Element to any Element in the tree that can hold child references found by ID or Tag.
+======================================================================================================================================================
+Query is: Add Text Element with Text: 'NewChildText' to the parent tag: LectureNote.
+
+
+XML with modification:
+
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+  <!-- XML test case -->
+    <LectureNote course="CSE681" note="my note">
+      <title name="ojas">
+        XML Example 1
+      </title>
+      <reference>
+        <title>
+          Programming Microsoft
+        </title>
+        <author>
+          Jeff Prosise
+          <TestTag tagName="Tester">
+            <ChildTestTag tagName="ChildTester">
+              <GreatChildTestTag tagName="Tester">
+              </GreatChildTestTag>
+            </ChildTestTag>
+          </TestTag>
+          <note Company="Wintellect">
+          </note>
+        </author>
+        <publisher>
+          Microsoft Press
+        </publisher>
+      </reference>
+      <comment>
+        Description of PCDATA
+      </comment>
+  <!-- My Comment -->
+    <NewChild NewChildName="NewChildValue">
+    </NewChild>
+    NewChildText
+    </LectureNote>
+
+
+Please Note: Output has been written in File: Output.xml
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 9 by removing name and value pair that supports attributes
+======================================================================================================================================================
+Query is: Remove Child Attribute with Name-Value Pair: 'tagName = Tester' from the tag: GreatChildTestTag.
+
+
+XML with modification:
+
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+  <!-- XML test case -->
+    <LectureNote course="CSE681" note="my note">
+      <title name="ojas">
+        XML Example 1
+      </title>
+      <reference>
+        <title>
+          Programming Microsoft
+        </title>
+        <author>
+          Jeff Prosise
+          <TestTag tagName="Tester">
+            <ChildTestTag tagName="ChildTester">
+              <GreatChildTestTag>
+              </GreatChildTestTag>
+            </ChildTestTag>
+          </TestTag>
+          <note Company="Wintellect">
+          </note>
+        </author>
+        <publisher>
+          Microsoft Press
+        </publisher>
+      </reference>
+      <comment>
+        Description of PCDATA
+      </comment>
+  <!-- My Comment -->
+    <NewChild NewChildName="NewChildValue">
+    </NewChild>
+    NewChildText
+    </LectureNote>
+
+
+Please Note: Output has been written in File: Output.xml
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 7 by removing Child Element from any Element in the tree that can hold child references found by ID or Tag.
+======================================================================================================================================================
+Query is: :Remove Child Element with Tag: TestTag from the parent tag: author.
+
+
+XML with modification:
+
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+  <!-- XML test case -->
+    <LectureNote course="CSE681" note="my note">
+      <title name="ojas">
+        XML Example 1
+      </title>
+      <reference>
+        <title>
+          Programming Microsoft
+        </title>
+        <author>
+          Jeff Prosise
+          <note Company="Wintellect">
+          </note>
+        </author>
+        <publisher>
+          Microsoft Press
+        </publisher>
+      </reference>
+      <comment>
+        Description of PCDATA
+      </comment>
+  <!-- My Comment -->
+    <NewChild NewChildName="NewChildValue">
+    </NewChild>
+    NewChildText
+    </LectureNote>
+
+
+Please Note: Output has been written in File: Output.xml
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 7 by providing the ability to add a root element to an empty document tree
+======================================================================================================================================================
+Query is:: Add Tagged Element: 'NewRoot'id the root is empty.
+
+Internal Tree Representation :
+============================================================
+
+
+  <NewRoot>
+  </NewRoot>
+
+
+ Please Note: Output has been written in File: Root.xml
+
+
+
+======================================================================================================================================================
+Demonstrating Requirement 4 by moving one XML Document object to another using Move Constructor and Move Assignment Operator.
+======================================================================================================================================================
+Move Constructor Called
+After Move Constructor operation,New object is holding the Internal Representation of Tree :
+
+  <NewRoot>
+  </NewRoot>
+
+Move Assignment Operator Called
+After Move Assignment operation,New object is holding the Internal Representation of Tree :
+  <NewRoot>
+  </NewRoot>
+
+
+ Please Note: Output has been written in File: Root.xml
+

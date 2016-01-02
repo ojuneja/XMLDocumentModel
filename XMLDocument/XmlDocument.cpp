@@ -210,7 +210,7 @@ bool XmlProcessing::XmlDocument::addAttribute(const std::string &name, const std
 bool XmlProcessing::XmlDocument::addRoot(const std::string &tag)
 {
 	//adds root if the tree is empty otherwise return false
-	std::_Bool flag = false;
+	bool flag = false;
 	if (pDocElement_)
 	{
 		for(auto elem:pDocElement_->getChildren())

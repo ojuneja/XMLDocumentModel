@@ -30,7 +30,7 @@ void Executive::demonstrateFindByNameValue(Display dp, XmlProcessing::XmlDocumen
 void Executive::demonstrateAddAttribute(Display dp, XmlProcessing::XmlDocument &doc, const std::string parent, std::string name, const std::string value)
 {
 	//demonstrates requirment of add child by adding attribute
-	std::_Bool displayFlag = false;
+	bool displayFlag = false;
 	std::cout << "\n""\n""\n" << std::string(150, '=');
 	std::cout << "\n" << "Demonstrating Requirement 9 by adding name and value pair that supports attributes";
 	std::cout << "\n" << std::string(150, '=');
@@ -43,7 +43,7 @@ void Executive::demonstrateAddAttribute(Display dp, XmlProcessing::XmlDocument &
 void Executive::demonstrateAddChild(Display dp, XmlProcessing::XmlDocument &doc, const std::string parent, const std::string option)
 {
 	
-	std::_Bool displayFlag = false;
+	bool displayFlag = false;
 	std::shared_ptr<AbstractXmlElement> sharedPtr;
 	if (option == "comment")
 	{
@@ -88,7 +88,7 @@ void Executive::demonstrateAddChild(Display dp, XmlProcessing::XmlDocument &doc,
 void Executive::demonstrateRemoveChild(Display dp, XmlProcessing::XmlDocument &doc, const std::string parent, const std::string elementToBeDeleted)
 {
 	//demonstrates requirment of remove child and then send the output to display class
-	std::_Bool displayFlag = false;
+	bool displayFlag = false;
 	std::cout << "\n""\n""\n" << std::string(150, '=');
 	std::cout << "\n" << "Demonstrating Requirement 7 by removing Child Element from any Element in the tree that can hold child references found by ID or Tag.";
 	std::cout << "\n" << std::string(150, '=');
@@ -101,7 +101,7 @@ void Executive::demonstrateRemoveChild(Display dp, XmlProcessing::XmlDocument &d
 void Executive::demonstrateRemoveAttribute(Display dp, XmlProcessing::XmlDocument &doc, const std::string parent, const std::string name, const std::string value)
 {
 	//demonstrates requirment of remove attribute and then send the output to display class
-	std::_Bool displayFlag = false;
+	bool displayFlag = false;
 	std::cout << "\n""\n""\n" << std::string(150, '=');
 	std::cout << "\n" << "Demonstrating Requirement 9 by removing name and value pair that supports attributes";
 	std::cout << "\n" << std::string(150, '=');
@@ -148,7 +148,7 @@ void Executive::demonstrateShowChildren(Display dp, XmlProcessing::XmlDocument &
 void Executive::demonstrateAddRoot(Display dp, XmlProcessing::XmlDocument &doc,const std::string root)
 {
 	//demonstartes add Root requirement
-	std::_Bool displayFlag = false;
+	bool displayFlag = false;
 	std::cout << "\n""\n""\n" << std::string(150, '=');
 	std::cout << "\n" << "Demonstrating Requirement 7 by providing the ability to add a root element to an empty document tree";
 	std::cout << "\n" << std::string(150, '=');
@@ -249,7 +249,7 @@ void executeForXML(const std::string &name)
 	// Now parse each file
 	if (pParser)
 	{
-		std::_Bool flag = configure.Attach(name);
+		bool flag = configure.Attach(name);
 		if (!flag)
 			{
 				std::cout << "\n  could not open file " << name << std::endl;
@@ -277,7 +277,7 @@ void executeForString()
 	std::string string = makeString();
 	if (pParser)
 	{
-		std::_Bool flag = configure.Attach(string, false);
+		bool flag = configure.Attach(string, false);
 		if (!flag)
 		{
 			std::cout << "\n  could not open file " << string << std::endl;
@@ -302,8 +302,8 @@ void executeForString()
 int main(int argc, char *argv[])
 {
 	//firstly all the operations carried out using XML and then through string
-	std::_Bool xmlFlag = true;
-	std::_Bool stringFlag = false;
+	bool xmlFlag = true;
+	bool stringFlag = false;
 	if (argc < 2)
 	{
 		std::cout

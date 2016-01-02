@@ -46,7 +46,7 @@ void Display::displayToConsole(std::vector<std::shared_ptr<AbstractXmlElement>> 
 	}
 }
 
-void Display::displayToConsole(std::shared_ptr<AbstractXmlElement> treeDisplay, std::_Bool flag, const std::string parent)
+void Display::displayToConsole(std::shared_ptr<AbstractXmlElement> treeDisplay, bool flag, const std::string parent)
 {
 	if (flag)
 	{
@@ -59,7 +59,7 @@ void Display::displayToConsole(std::shared_ptr<AbstractXmlElement> treeDisplay, 
 	}
 }
 
-void Display::displayToConsole(std::shared_ptr<AbstractXmlElement> treeDisplay, std::_Bool flag)
+void Display::displayToConsole(std::shared_ptr<AbstractXmlElement> treeDisplay, bool flag)
 {
 	if (flag)
 	{
@@ -73,7 +73,7 @@ void Display::displayToConsole(std::shared_ptr<AbstractXmlElement> treeDisplay, 
 }
 
 
-void Display::writeToOutputXML(std::shared_ptr<AbstractXmlElement> treeDisplay, std::_Bool flag)
+void Display::writeToOutputXML(std::shared_ptr<AbstractXmlElement> treeDisplay, bool flag)
 {
 	if (flag) //writes results to Output.xml if flag is true
 	{
@@ -99,7 +99,7 @@ void Display::displayToConsole(std::vector<std::pair<std::string, std::string>> 
 		std::cout << "\n""\n" << "Name-value pair not found for element: " << tag  << "\n";
 }
 
-void Display::writeToRootXML(std::shared_ptr<AbstractXmlElement> treeDisplay, std::_Bool flag)
+void Display::writeToRootXML(std::shared_ptr<AbstractXmlElement> treeDisplay, bool flag)
 {
 	if (flag) //writes results to Root.xml if flag is true
 	{

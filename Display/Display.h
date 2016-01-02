@@ -57,12 +57,12 @@ ver 1.0 : 15 Mar 15
 	{
 	public:
 		void displayToConsole(std::vector<std::shared_ptr<AbstractXmlElement>> &searchVectorDisplay,const std::string &tag);
-		void displayToConsole(std::shared_ptr<AbstractXmlElement> treeDisplay, std::_Bool flag, const std::string parent);
-		void displayToConsole(std::shared_ptr<AbstractXmlElement> treeDisplay, std::_Bool flag);
+		void displayToConsole(std::shared_ptr<AbstractXmlElement> treeDisplay, bool flag, const std::string parent);
+		void displayToConsole(std::shared_ptr<AbstractXmlElement> treeDisplay, bool flag);
 		void displayToConsole(std::vector<std::shared_ptr<AbstractXmlElement>> &searchVectorDisplay, const std::string &name, const std::string &value);
 		void displayToConsole(std::vector<std::pair<std::string, std::string>> vectornameValuePair, const std::string tag);
 		void displayToConsole(std::vector<std::shared_ptr<AbstractXmlElement>> childrenDisplay);
-		void writeToOutputXML(std::shared_ptr<AbstractXmlElement> treeDisplay, std::_Bool flag);
-		void writeToRootXML(std::shared_ptr<AbstractXmlElement> treeDisplay, std::_Bool flag);
+		void writeToOutputXML(std::shared_ptr<AbstractXmlElement> treeDisplay, bool flag);
+		void writeToRootXML(std::shared_ptr<AbstractXmlElement> treeDisplay,bool flag);
 	};
 #endif

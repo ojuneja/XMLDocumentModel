@@ -107,7 +107,7 @@ void HandleXMLDeclarartionStatement::doAction(std::string string)
 {
 	std::string buf; // Have a buffer string
 	std::vector<std::string> tokens; // Create vector to hold our words
-	std::_Bool valueFlag = false;
+	bool valueFlag = false;
 	std::vector<std::string> attribute;
 	std::vector<std::string> value;
 	int i = 0;
@@ -162,7 +162,7 @@ void HandleXMLProcInstrElement::doAction(std::string string)
 {
 	std::string buf; // Have a buffer string
 	std::vector<std::string> tokens; // Create vector to hold our words
-	std::_Bool valueFlag = false, styleSheetFlag = false;
+	bool valueFlag = false, styleSheetFlag = false;
 	std::vector<std::string> attribute;
 	std::vector<std::string> value;
 	int i = 0, counter=0;
@@ -212,7 +212,7 @@ void HandleXMLTaggedAttributeElement::doAction(std::string string)
 {
 	int incrementTokenCounter = 0;
 	std::vector<std::string> tokens; // Create vector to hold our words
-	std::_Bool valueFlag = false;
+	bool valueFlag = false;
 	std::vector<std::string> attribute;
 	std::vector<std::string> value;
 	int i = 0;
@@ -255,9 +255,9 @@ void HandleXMLTaggedAttributeElement::doAction(std::string string)
 std::vector<std::string> HandleXMLTaggedAttributeElement::processTokens(std::string string)
 {
 	std::string buf; // Have a buffer string
-	std::_Bool singleCommaFlag = false;
+	bool singleCommaFlag = false;
 	std::string singleCommaText = "";
-	std::_Bool doubleCommaFlag = false;
+	bool doubleCommaFlag = false;
 	std::string doubleCommaText = "";
 	std::vector<std::string> tokens;
 	std::stringstream ss(string);
