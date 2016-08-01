@@ -6,9 +6,7 @@
 //  Language:     Visual C++, ver 13.0                           //
 //  Platform:     HP Pavilion g series, Win 7.0                  //
 //Application:ConfigureParser.cpp ,Project - 2(XML Document Model)//
-//  Author:       Ojas Juneja                                    //
-//                Syracuse University                            //
-//                ojuneja@syr.edu, (315) 751-8944                //
+//  Author:        Ojas Juneja, Syracuse University 
 ///////////////////////////////////////////////////////////////////
 
 

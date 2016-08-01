@@ -3,11 +3,7 @@
 // ver 1.4                                                       //
 // Application: Help for CSE687 Pr#2, Spring 2015                //
 // Platform:    Dell XPS 2720, Win 8.1 Pro, Visual Studio 2013   //
-// Author:      Jim Fawcett, CST 4-187, 443-3948                 //
-//              jfawcett@twcny.rr.com                            //
-// Modified By : Ojas Juneja                                     //
-//               Syracuse University                             //
-//               ojuneja@syr.edu, (315) 751-8944                 //
+// Author:       Ojas Juneja, Syracuse University               //
 ///////////////////////////////////////////////////////////////////
 
 #include "XmlElement.h"
