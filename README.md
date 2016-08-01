@@ -7,6 +7,7 @@ and can write the revisions to another XML string or file.
 
 #####The Output can be find here [HERE](https://github.com/ojuneja/XMLDocumentModel/blob/master/output.txt)
 
-#####USAGE
-Run Compile.bat and then Run Run.bat
+##### Running The Project
+Project can be instaniated by running [compile.bat](https://github.com/ojuneja/XMLDocumentModel/blob/master/compile.bat) first 
+and then [run.bat] (https://github.com/ojuneja/XMLDocumentModel/blob/master/run.bat)
 
